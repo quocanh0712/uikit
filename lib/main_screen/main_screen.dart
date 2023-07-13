@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:uikit/main_screen/favorite_screen.dart';
 import 'package:uikit/main_screen/home_screen.dart';
 
@@ -28,13 +29,9 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> icon = [
-      'images/Uiimage/image0.jpeg',
-      'images/Uiimage/image1.jpeg',
-      'images/Uiimage/image2.jpeg',
-      'images/Uiimage/image3.jpeg',
-    ];
     double screenWidth = MediaQuery.of(context).size.width;
+    Color bottomNavColor = HexColor('#353945');
+    Color ClipColor = HexColor('#ed9534');
     return Scaffold(
       body: Stack(
         children: [
@@ -45,13 +42,13 @@ class _MainScreenState extends State<MainScreen> {
             alignment: Alignment.bottomCenter,
             child: Container(
               //2
-              color: Colors.black.withOpacity(0.7),
+              //  color: Colors.black.withOpacity(0.7),
               height: 110,
               child: Container(
                 margin: const EdgeInsets.all(20),
                 height: screenWidth * .155,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: bottomNavColor,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(.15),
@@ -78,10 +75,10 @@ class _MainScreenState extends State<MainScreen> {
                     child: Stack(
                       children: [
                         Positioned(
-                          left: -10,
+                          left: -11,
                           top: 10,
                           child: Padding(
-                            padding: const EdgeInsets.only(top: 3.0),
+                            padding: const EdgeInsets.only(top: 1.0),
                             child: SizedBox(
                               width: screenWidth * .1600,
                               child: Center(
@@ -93,7 +90,7 @@ class _MainScreenState extends State<MainScreen> {
                                   width: screenWidth * .1100,
                                   decoration: BoxDecoration(
                                     color: index == currentIndex
-                                        ? Colors.black
+                                        ? ClipColor
                                         : Colors.transparent,
                                     borderRadius: BorderRadius.circular(50),
                                   ),
@@ -112,7 +109,7 @@ class _MainScreenState extends State<MainScreen> {
                             size: screenWidth * .065,
                             color: index == currentIndex
                                 ? Colors.white
-                                : Colors.black,
+                                : Colors.white,
                           ),
                         ),
                       ],

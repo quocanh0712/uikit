@@ -44,6 +44,10 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   intl: ^0.18.1
   hexcolor: ^2.0.5
+  webview_flutter: ^4.2.2
+  shared_preferences: ^2.0.6
+  dio:
+  
   
 
   
